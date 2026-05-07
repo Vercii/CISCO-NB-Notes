@@ -66,7 +66,11 @@ An example is that a user can view a web page, while messaging someone and liste
 - Can be the local cable provider, the landline telephone service provider, and the cellular network on a smartphone.
 - Critical to communications across the global internet. IPSs are connected in a hierarchical manner that ensures that internet traffic takes the shortest path from source to destination.
 
-
 ### ISP Connections
 - On a one on one connection, an end device can directly connect to a modem.
 - On a many to one connection, generally, a router is needed to manage traffic for multiple end devices.
+
+### Cable and DSL Connections
+- Cable: Provides an always on high bandwidth connection to the internet. The internet signal is carried on the same coaxial cable that delivers cable television. Much faster than DSL, often reaching 1000 Mbps (1 Gbps) or more.
+
+- DSL: Uses existing copper telephone lines. Dedicated line to your home; speeds are more consistent and don't slow down based on neighbor usage.
