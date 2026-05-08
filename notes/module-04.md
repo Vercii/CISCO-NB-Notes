@@ -51,3 +51,6 @@ Wireless routers using the 802.11 standards have multiple settings that have to 
 - Standard Channel: Specifies the channel over which communication will occur. Set to auto by default to allow the access point to detemine the optimum channel to use.
 - Service Set Identifier (SSID) Broadcast: Determines if the SSID will be broadcast to all devices within range. Set to enabled by default.
 
+### Design Considerations
+- SSID: Proper naming, avoid giving away too much information. Don't include the device model or brand name.
+- Consider the type of devices that will connect. This requires configuring whether it will have 802.11a, 802,11b, 802.11n, and 802.11ac. 
