@@ -16,3 +16,22 @@ Both IPv4 and IPv6 will coexist in the near future and the transition will take 
 Only dual stack uses native IPv6 connectivity.
 
 <b>Tunneling and translation are for transitioning to native IPv6 and should only be used where needed. The goal should be native IPv6 communications from source to destination.</b>
+
+## Hexadecimal Number System
+IPv6 uses these 16 digits represented as hextets, making them presentable in a readable format:
+
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+### Rules in reducing the number of hexadecimal digits
+
+Original address: 0db8:acad:a088:0000:0000:7000:0123
+
+- Omit Leading 0s: Leading zeroes in any 16-bit segment (hextet) do not have to be written.
+    - db8:acad:a088:0:0:7000:123
+- Double Colon: Any single contiguous string of one or more 16-bit segments consisting of ALL zeroes (0000:0000) can be represented with a double colon. <b> This rule can only be used once in an address. Use it on the longest string in case of multiple contiguous 0 hextets.</b>
+    - db8:acad:a088::7000:123
+    
+Applying both rules at once with the address <b>0db8:acad:000a:0000:0000:0000:0001</b>
+
+would result into
+<b>db8:acad:a::1</b>
