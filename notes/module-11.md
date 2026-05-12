@@ -39,4 +39,9 @@ DHCP Server then responds with a <b>DHC Offer</b> which contains an IP Address t
 
 If the host accepts it, it sends a DHCP Request packet that states that it accepts it. The device will then take the information (IP Address, Subnet Mask, Default Gateway) and enter it into its IP address settings.
 
-Once the server receives the DHCP Request, the server will send back a DHCP acknowledgement that will indicate to the host that the server is placing the IP address into its table associated with the MAC address that was sent from the host.
+Once the server receives the DHCP Request, the server will send back a DHCP Acknowledgement that will indicate to the host that the server is placing the IP address into its table associated with the MAC address that was sent from the host.
+
+## DHCP Service Configuration
+Two ways to get an IP address on a device.
+- Manually or statically configure it.
+- Get it automatically from a device that provides DHCP.
