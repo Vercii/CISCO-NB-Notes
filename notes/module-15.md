@@ -78,3 +78,110 @@ Reassemble packets in the correct order
 | Retransmits lost packets | Does not retransmit packets     |
 | Packets arrive in order  | Packets may arrive out of order |
 | More overhead            | Less overhead                   |
+
+---
+
+### Transport Layer Port Numbers
+Transport layer port numbers are used to identify:
+
+Specific applications
+Communication sessions (conversations)
+The source and destination of data transmissions
+
+They allow multiple applications to communicate over the network at the same time without interfering with each other.
+
+---
+### Servers and Port Numbers
+When a server is configured to provide services over a network, applications are installed on it.
+
+Examples:
+- Web server
+- FTP server
+- Mail server
+
+Each application is assigned a specific transport layer port number.
+
+<b>Well-Known Ports:</b>
+Port numbers below 1024 are called well-known ports because they are commonly used standard ports.
+
+Some examples include:
+| Service            | Port Number |
+| ------------------ | ----------- |
+| Web Server (HTTP)  | 80          |
+| FTP Server         | 21          |
+| Mail Server (SMTP) | 25          |
+
+Clients already know these standard ports automatically.
+
+For example:
+- A web browser automatically knows that web servers listen on port 80.
+- Users only type the URL because the browser already knows the destination port.
+
+---
+
+### How Servers Listen for Requests
+A server “listens” on a specific port by waiting for requests addressed to:
+1. Its IP address
+2. A particular port number
+
+For example:
+- Web server listens on TCP port 80
+- FTP server listens on TCP port 21
+
+This allows one server to run many services simultaneously.
+
+---
+
+### Dynamic Port Numbers on Hosts
+Client devices (hosts) use dynamic ports, also called ephemeral ports.
+
+Characteristics:
+- Usually above port 1024
+- Randomly assigned
+- Used temporarily as source ports
+
+For example:
+- A web browser may randomly receive source port 5305
+- It then sends traffic to destination port 80
+
+| Source Port | Destination Port |
+| ----------- | ---------------- |
+| 5305        | 80               |
+
+---
+
+## How Communication Works
+### Step 1: Client Sends Request
+
+The client:
+- Uses a random source port
+- Sends data to the server’s known destination port
+
+Example:
+- Source port: 5305
+- Destination port: 80
+
+The server sees port 80 and forwards the request to the web server application.
+
+### Step 2: Server Sends Response
+The server reverses the ports:
+- Source port becomes 80
+- Destination port becomes 5305
+
+Example:
+| Source Port | Destination Port |
+| ----------- | ---------------- |
+| 80          | 5305             |
+
+When the client receives the response, it knows the data belongs to the web browser session because of port 5305.
+
+---
+
+### Multiple Actions at the Same Time
+Port numbers allow devices to run multiple network applications simultaneously.
+
+Example:
+- Web browser uses source port 5305 - destination port 80
+- FTP client uses source port 5307 - destination port 21
+
+Because each application uses different port numbers, the device can correctly identify which data belongs to which application.
